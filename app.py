@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request
 from chatterbot import ChatBot
 from chatterbot.trainers import ChatterBotCorpusTrainer
-
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 app = Flask(__name__)
 
 english_bot = ChatBot("Chatterbot", storage_adapter="chatterbot.storage.SQLStorageAdapter")
